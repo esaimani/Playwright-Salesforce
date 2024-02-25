@@ -8,6 +8,7 @@ export class HomePage extends Wrapper {
     }
 
     async openIndividuals() {
+        //Click on Toggle Button
         await this.click(toggle);
         await this.click(viewAll);
         await this.click(individual);
