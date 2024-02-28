@@ -82,7 +82,12 @@ export abstract class Wrapper {
     }
 
     async isEnabled(selector: string): Promise<boolean> {
-        return await this.page.locator(selector).isEnabled()
+        try {
+            return await this.page.locator(selector).isEnabled();
+        }
+        catch (error) {
+            throw new Error(`Elemnt has selector vale as ${selector} is not enabled`)
+        }
     }
 
     async isDisabled(selector: string): Promise<boolean> {

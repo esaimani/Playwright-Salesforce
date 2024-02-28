@@ -13,7 +13,7 @@ test('Create New Indiviual', async ({ page }) => {
         await loginpage.login();
     });
     await test.step('Step 2 - Open Individual Page', async () => {
-        await homePage.openIndividuals();
+        await homePage.openIndividualsMenu();
     })
 
     await test.step('Step 3 - Create New Individual', async () => {

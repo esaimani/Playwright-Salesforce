@@ -7,8 +7,7 @@ export class HomePage extends Wrapper {
         super(page);
     }
 
-    async openIndividuals() {
-        //Click on Toggle Button
+    async openIndividualsMenu() {
         await this.click(toggle);
         await this.click(viewAll);
         await this.click(individual);
