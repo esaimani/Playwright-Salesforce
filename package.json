@@ -8,7 +8,7 @@
     "postindividual": "npx playwright show-report",
     "qa": "npx playwright test ./tests/Salesforce/01_CreateIndividuals.spec.ts  --project=qa",
     "dev": "npx playwright test ./tests/Salesforce/01_CreateIndividuals.spec.ts --project=dev",
-    "customFixture": "npx playwright test ./tests/Salesforce/02_CreateIndividualsWithCustomFixture.spec.ts --project=qa --headed"
+    "customFixture": "npx playwright test ./tests/Salesforce/02_CreateIndividualsWithCustomFixture.spec.ts --project=qa"
   },
   "keywords": [],
   "author": "",
