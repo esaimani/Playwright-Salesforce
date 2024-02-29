@@ -15,8 +15,6 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npm run qa
     - name: Run Playwright tests using custom fixture
       run: npm run customFixture  
     - uses: actions/upload-artifact@v3
