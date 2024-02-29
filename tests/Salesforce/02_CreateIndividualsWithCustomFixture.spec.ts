@@ -2,8 +2,8 @@ import { test } from "../../fixtures/fixture";
 
 test('Create Individual with custom fixture', async ({ loginPage, homePage, individualPage }) => {
     await test.step('Step 1 - Launch Salesforce & login', async () => {
-        await loginPage.openApp();
-        await loginPage.login();
+        await loginPage.openAppUsingEnv();
+        await loginPage.loginUsingEnv();
 
     });
 

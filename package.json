@@ -8,7 +8,7 @@
     "postindividual": "npx playwright show-report",
     "qa": "npx playwright test ./tests/Salesforce/01_CreateIndividuals.spec.ts  --project=qa",
     "dev": "npx playwright test ./tests/Salesforce/01_CreateIndividuals.spec.ts --project=dev",
-    "customFixture": "npx playwright test ./tests/Salesforce/02_CreateIndividualsWithCustomFixture.spec.ts --project=qa"
+    "customFixture": "cross-env env_name=test npx playwright test ./tests/Salesforce/02_CreateIndividualsWithCustomFixture.spec.ts --project=test"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,10 @@
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.41.2",
-    "@types/node": "^20.11.20"
+    "@types/node": "^20.11.20",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

@@ -23,6 +23,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  globalSetup: 'utils/globalSetup.ts',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -38,7 +39,7 @@ export default defineConfig({
       name: 'qa',
       use: {
         ...devices['Desktop Chrome'], channel: 'chrome',
-        baseURL: 'https://login.salesforce.com/',
+        baseURL: 'https://login.salesforce.commm/',
         screenshot: 'only-on-failure',
         trace: 'on'
       },
@@ -51,10 +52,10 @@ export default defineConfig({
       },
     },
     {
-      name: 'dev',
+      name: 'test',
       use: {
         ...devices['Desktop Safari'],
-        baseURL: 'https://login.salesforce.com/'
+        baseURL: 'https://login.salesforce.com/',
       },
     },
 
