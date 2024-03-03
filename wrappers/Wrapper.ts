@@ -115,9 +115,40 @@ export abstract class Wrapper {
     }
 
     async takeScreenshot(path: string): Promise<void> {
-        await this.page.screenshot({ path: path });
+
+        // Generate a unique identifier, like a timestamp
+        const timestamp = new Date().toISOString().replace(/[-:]/g, '').replace('T', '_').split('.')[0];
+        // Combine the timestamp with the provided path
+        const uniquePath = `./screenshots/${path}_${timestamp}.jpeg`;
+        // Take the screenshot with the unique path
+        await this.page.screenshot({ path: uniquePath, type: 'jpeg' });
 
     }
+
+    async acceptAlert(selector: string) {
+        this.page.on('dialog', dialog => {
+            console.log(`Alert Type is : ${dialog.type()}`);
+            console.log(`Message displayed in Alert : ${dialog.message()}`);
+            dialog.accept();
+        })
+        const locator = this.page.locator(selector);
+        await locator.click();
+    }
+
+    async verifyURL(expectedURL: string) {
+        const url = this.page.url();
+        expect(url, {
+            message: `Actual url : ${url} is not matched with expected url : ${expectedURL}`
+        }).toEqual(expectedURL);
+    }
+
+    async verifyTitle(expectedTitle: string) {
+        const title = this.page.url();
+        expect(title, {
+            message: `Actual title : ${title} is not matched with expected title : ${expectedTitle}`
+        }).toEqual(expectedTitle);
+    }
+
 
 
 

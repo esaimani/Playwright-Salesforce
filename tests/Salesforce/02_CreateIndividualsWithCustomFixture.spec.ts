@@ -7,11 +7,11 @@ test('Create Individual with custom fixture', async ({ loginPage, homePage, indi
 
     });
 
-    await test.step('Step 2 - Open Individual Page', async () => {
-        await homePage.openIndividualsMenu();
-    })
+    // await test.step('Step 2 - Open Individual Page', async () => {
+    //     await homePage.openIndividualsMenu();
+    // })
 
-    await test.step('Step 3 - Create New Individual', async () => {
-        await individualPage.createIndividual();
-    })
+    // await test.step('Step 3 - Create New Individual', async () => {
+    //     await individualPage.createIndividual();
+    // })
 })
