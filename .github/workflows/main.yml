@@ -16,7 +16,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests using custom fixture
-      run: npm run customFixture  
+      run: npm run smoke-individual  
     - uses: actions/upload-artifact@v3
       if: always()
       with:
