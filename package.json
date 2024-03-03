@@ -11,7 +11,8 @@
     "set-allure-report-path": "ALLURE_RESULTS_DIR=allure-results",
     "generate-report": "allure generate allure-results -o allure-report --clean",
     "open-report": "allure open allure-report",
-    "clean-report": "rm -rf allure-results"
+    "clean-report": "rm -rf allure-results",
+    "smoke-individual-ci": "npm run individual"
   },
   "keywords": [],
   "author": "",

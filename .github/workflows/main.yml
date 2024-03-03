@@ -15,8 +15,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests using custom fixture
-      run: npm run smoke-individual  
+    - name: Run Playwright tests Smoke Individual
+      run: smoke-individual-ci  
     - uses: actions/upload-artifact@v3
       if: always()
       with:
